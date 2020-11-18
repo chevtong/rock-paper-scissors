@@ -21,6 +21,25 @@ img{
     width: 100px;
 }
 
+.entergame{
+    background-color: #f6f6f6;
+    height: 1000px;
+    width: 100%;
+    opacity: 0.9;
+    position: absolute;
+    transition: 1s opacity;
+}
+
+.btn-entergame{
+    width: 300px;
+    height: 300px;
+    margin-top: 150px;
+}
+
+
+
+
+
 .hands{
     height: 280px;
     width: 80%;
@@ -32,26 +51,23 @@ img{
     
 }
 
-/* .playerhand, .computerhand{
-    align-self: center;
-} */
+
 
 .playerhandicon, .computerhandicon{
     width: 200px;
-/*    
-    position: relative;
-    animation: bounce 1s 1.5; */
 
 }
 
-@keyframes bounce{
-    0%   {transform: translateY(0);}
-    25%   {transform: translateY(-30px);}
-    50%  {transform: translateY(0);}
-    75%   {transform: translateY(-30px);}
-    100% {transform: translateY(0);}
-  
+.transform {  
+    transition: all 2s ease;
 }
+.transform-active {
+    background-color: #45CEE0;
+    height: 200px;
+    width: 200px;
+  }
+
+
 
 .options{
     width: 90%;
@@ -63,24 +79,25 @@ img{
 }
 
 button{
-    border: 1px solid #515070;
+    border: 5px solid #515070; 
     border-radius: 50%;
-    color:#515070;
+    
     background-color: #515070;
     padding: 20px 20px;
-    transition: 100ms;
+    outline: none;
 }
 
 button:hover{
     transform: scale(1.2);
+    border: 1px solid #515070;
+    
 }
 
-div.fadeOut{
-    opacity: 0;
-    pointer-events: none;
-}
-
-div.fadeIn {
-    opacity: 1;
-    pointer-events: all;
+@keyframes bounce{
+    0%   {transform: translateY(0);}
+    25%   {transform: translateY(-30px);}
+    50%  {transform: translateY(0);}
+    75%   {transform: translateY(-30px);}
+    100% {transform: translateY(0);}
+  
 }

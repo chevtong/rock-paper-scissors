@@ -1,8 +1,28 @@
 
 //add animation @keyframe, ease in 
 // change the title and intro
-//maybe put the result in a function? 
+
 //play again button
+
+
+//Enter page display opacity  
+document.querySelector(".btn-entergame").addEventListener("click", function(){
+
+    let enterScreen = document.querySelector(".entergame");
+
+    enterScreen.style.opacity = "0.8";
+    setTimeout(() =>{ enterScreen.style.opacity = "0.7";}, 200);
+    setTimeout(() =>{ enterScreen.style.opacity = "0.6";}, 300);
+    setTimeout(() =>{ enterScreen.style.opacity = "0.5";}, 400);
+    setTimeout(() =>{ enterScreen.style.opacity = "0.4";}, 500);
+    setTimeout(() =>{ enterScreen.style.opacity = "0.2";}, 600);
+    setTimeout(() =>{ enterScreen.style.opacity = "0.1";}, 700);
+    setTimeout(() =>{ enterScreen.style.opacity = "0";}, 800);
+    setTimeout(() =>{ enterScreen.remove()}, 1000);
+
+});  
+
+
 
 
 let playerChoice;
@@ -51,33 +71,43 @@ function playMatch(){
 
 
 //Function to change the handicon + animation
+let playerChoiceLogo = document.querySelector(".playerhandicon");
+
+let computerChoiceLogo = document.querySelector(".computerhandicon");
+
+
 
 function ChangeHandIcon(){
 
-    let playerChoiceLogo = document.querySelector(".playerhandicon");
-
-    let computerChoiceLogo = document.querySelector(".computerhandicon");
-
-    // animation for hand    
+     // animation for hand  
+    
     playerChoiceLogo.style.animation = "bounce 1s 1.5 ease";
     computerChoiceLogo.style.animation = "bounce 1s 1.5 ease";
+
+    
 
     setTimeout(() =>{ 
     
     playerChoiceLogo.setAttribute('src', "img/" + playerChoice + "-player.png");
  
-    
     computerChoiceLogo.setAttribute('src', "img/" + computerChoice + "-computer.png");
     
     }, 1500);
 
-
-  
-    
-
-
-
 };
+
+//Display result
+function displayResult(){
+setTimeout(() =>{ 
+    
+    let displayResult = document.querySelector("h3");
+    displayResult.innerHTML = result;
+
+    
+    }, 1500);
+};
+
+
 
 
 
@@ -88,22 +118,17 @@ document.getElementById("playerRock").addEventListener("click", function(){
     getComputerChoice();
     ChangeHandIcon();
     playMatch();
+    displayResult();
 
-    let displayResult = document.querySelector("h3");
-    displayResult.innerHTML = result;
-
-
-
-    
-
-
-
+    // let displayResult = document.querySelector("h3");
+    // displayResult.innerHTML = result;
 
 console.log("player :" + playerChoice);
 console.log("computer :" + computerChoice);
 console.log(result);
     
-});
+
+  });
 
 //get player choice - PAPER
 document.getElementById("playerPaper").addEventListener("click", function(){
@@ -112,9 +137,7 @@ document.getElementById("playerPaper").addEventListener("click", function(){
     getComputerChoice();
     ChangeHandIcon();
     playMatch();
-
-    let displayResult = document.querySelector("h3");
-    displayResult.innerHTML = result;
+    displayResult();
 
 
 
@@ -132,9 +155,7 @@ document.getElementById("playerScrissors").addEventListener("click", function(){
     getComputerChoice();
     ChangeHandIcon();
     playMatch();
-    
-    let displayResult = document.querySelector("h3");
-    displayResult.innerHTML = result;
+    displayResult();
 
 console.log("player :" + playerChoice);
 console.log("computer :" + computerChoice);
