@@ -28,15 +28,29 @@ img{
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-evenly; 
-    padding-bottom: 20px;  
+    padding-bottom: 20px; 
+    
 }
 
-.playerhand, .computerhand{
+/* .playerhand, .computerhand{
     align-self: center;
-}
+} */
 
 .playerhandicon, .computerhandicon{
-    width: 150px;
+    width: 200px;
+/*    
+    position: relative;
+    animation: bounce 1s 1.5; */
+
+}
+
+@keyframes bounce{
+    0%   {transform: translateY(0);}
+    25%   {transform: translateY(-30px);}
+    50%  {transform: translateY(0);}
+    75%   {transform: translateY(-30px);}
+    100% {transform: translateY(0);}
+  
 }
 
 .options{

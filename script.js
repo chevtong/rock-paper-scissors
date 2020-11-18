@@ -1,4 +1,4 @@
-//change the size of icon on the match ground
+
 //add animation @keyframe, ease in 
 // change the title and intro
 //maybe put the result in a function? 
@@ -50,15 +50,32 @@ function playMatch(){
 
 
 
+//Function to change the handicon + animation
 
-//Function to change the handicon
 function ChangeHandIcon(){
 
     let playerChoiceLogo = document.querySelector(".playerhandicon");
-    playerChoiceLogo.setAttribute('src', "img/" + playerChoice + "-player.png");
 
     let computerChoiceLogo = document.querySelector(".computerhandicon");
+
+    // animation for hand    
+    playerChoiceLogo.style.animation = "bounce 1s 1.5 ease";
+    computerChoiceLogo.style.animation = "bounce 1s 1.5 ease";
+
+    setTimeout(() =>{ 
+    
+    playerChoiceLogo.setAttribute('src', "img/" + playerChoice + "-player.png");
+ 
+    
     computerChoiceLogo.setAttribute('src', "img/" + computerChoice + "-computer.png");
+    
+    }, 1500);
+
+
+  
+    
+
+
 
 };
 
@@ -74,6 +91,13 @@ document.getElementById("playerRock").addEventListener("click", function(){
 
     let displayResult = document.querySelector("h3");
     displayResult.innerHTML = result;
+
+
+
+    
+
+
+
 
 console.log("player :" + playerChoice);
 console.log("computer :" + computerChoice);
@@ -91,6 +115,10 @@ document.getElementById("playerPaper").addEventListener("click", function(){
 
     let displayResult = document.querySelector("h3");
     displayResult.innerHTML = result;
+
+
+
+
 
 console.log("player :" + playerChoice);
 console.log("computer :" + computerChoice);
