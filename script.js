@@ -1,8 +1,5 @@
-
-//add animation @keyframe, ease in 
-// change the title and intro
-
-//play again button
+// TODO: clean the code, create function if possible 
+// make player win 100% /75%
 
 
 //Enter page display opacity  
@@ -10,7 +7,7 @@ document.querySelector(".btn-entergame").addEventListener("click", function(){
 
     let enterScreen = document.querySelector(".entergame");
 
-    enterScreen.style.opacity = "0.8";
+    enterScreen.style.opacity = "0.9";
     setTimeout(() =>{ enterScreen.style.opacity = "0.7";}, 200);
     setTimeout(() =>{ enterScreen.style.opacity = "0.6";}, 300);
     setTimeout(() =>{ enterScreen.style.opacity = "0.5";}, 400);
@@ -23,13 +20,8 @@ document.querySelector(".btn-entergame").addEventListener("click", function(){
 });  
 
 
-
-
 let playerChoice;
 let computerChoice; 
-
-
-
 
 // Function to get computer choice
 function getComputerChoice(){
@@ -75,12 +67,11 @@ let playerChoiceLogo = document.querySelector(".playerhandicon");
 
 let computerChoiceLogo = document.querySelector(".computerhandicon");
 
-
+console.log(playerChoiceLogo);
 
 function ChangeHandIcon(){
 
      // animation for hand  
-    
     playerChoiceLogo.style.animation = "bounce 1s 1.5 ease";
     computerChoiceLogo.style.animation = "bounce 1s 1.5 ease";
 
@@ -111,6 +102,35 @@ setTimeout(() =>{
 
 
 
+// Play again page
+let matchScreen = document.querySelector(".match");
+
+let playAgainScreen = document.querySelector(".playagain");
+
+function playAgain(){
+
+    setTimeout(() =>{ playAgainScreen.style.display = 'block'; }, 4000 );
+
+    document.querySelector(".btn-playagain").addEventListener("click", function(){
+
+        // playAgainScreen.style.opacity = "0.7";
+        setTimeout(() =>{ playAgainScreen.style.opacity = "0.8";}, 200);
+        setTimeout(() =>{ playAgainScreen.style.opacity = "0.7";}, 300);
+        setTimeout(() =>{ playAgainScreen.style.opacity = "0.6";}, 400);
+        setTimeout(() =>{ playAgainScreen.style.opacity = "0.5";}, 500);
+        setTimeout(() =>{ playAgainScreen.style.opacity = "0.4";}, 600);
+        setTimeout(() =>{ playAgainScreen.style.opacity = "0.3";}, 700);
+        setTimeout(() =>{ playAgainScreen.style.opacity = "0.2";}, 800);
+        setTimeout(() =>{ playAgainScreen.style.opacity = "0.1";}, 900);
+        setTimeout(() =>{ playAgainScreen.style.display = "none"}, 1000);
+
+        location.reload();
+
+    });
+    
+};
+
+
 //get player choice - ROCK
 document.getElementById("playerRock").addEventListener("click", function(){
 
@@ -119,14 +139,11 @@ document.getElementById("playerRock").addEventListener("click", function(){
     ChangeHandIcon();
     playMatch();
     displayResult();
-
-    // let displayResult = document.querySelector("h3");
-    // displayResult.innerHTML = result;
+    playAgain();
 
 console.log("player :" + playerChoice);
 console.log("computer :" + computerChoice);
 console.log(result);
-    
 
   });
 
@@ -138,10 +155,7 @@ document.getElementById("playerPaper").addEventListener("click", function(){
     ChangeHandIcon();
     playMatch();
     displayResult();
-
-
-
-
+    playAgain();
 
 console.log("player :" + playerChoice);
 console.log("computer :" + computerChoice);
@@ -156,6 +170,7 @@ document.getElementById("playerScrissors").addEventListener("click", function(){
     ChangeHandIcon();
     playMatch();
     displayResult();
+    playAgain();
 
 console.log("player :" + playerChoice);
 console.log("computer :" + computerChoice);

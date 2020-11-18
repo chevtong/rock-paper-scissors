@@ -4,17 +4,27 @@ body{
     background-color: #f6f6f6;
 }
 
-h1, h3{
+h1, h3, p{
     color: #ff8e6e;
 }
 
 h1{
-    font-size: 40px;
+    font-size: 60px;
     text-shadow: 2px 2px #515070;
+    margin-bottom: 5px;
 }
 
 h3{
-    font-size: 40px;
+    font-size: 50px;
+    margin: 20px;
+    }
+
+.entergame h3{
+    text-align: left;
+} 
+
+p{ 
+    font-size: 30px;
 }
 
 img{
@@ -27,7 +37,6 @@ img{
     width: 100%;
     opacity: 0.9;
     position: absolute;
-    transition: 1s opacity;
 }
 
 .btn-entergame{
@@ -36,26 +45,24 @@ img{
     margin-top: 150px;
 }
 
-
-
-
+.far {
+    font-size: 20px;
+    text-shadow: none;
+}
 
 .hands{
-    height: 280px;
-    width: 80%;
+    height: 380px;
+    width: 90%;
     margin: auto;
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-evenly; 
-    padding-bottom: 20px; 
-    
+    padding-bottom: 50px 20px; 
 }
 
-
-
 .playerhandicon, .computerhandicon{
-    width: 200px;
-
+    width: 250px;
+    align-self: center;
 }
 
 .transform {  
@@ -65,7 +72,7 @@ img{
     background-color: #45CEE0;
     height: 200px;
     width: 200px;
-  }
+}
 
 
 
@@ -93,6 +100,23 @@ button:hover{
     
 }
 
+
+.playagain{
+    background-color: #f6f6f6;
+    height: 1000px;
+    width: 100%;
+    opacity: 0.85;
+    position: absolute;
+    display: none;
+}
+
+.btn-playagain{
+    width: 300px;
+    height: 300px;
+    margin-top: 150px;
+}
+
+
 @keyframes bounce{
     0%   {transform: translateY(0);}
     25%   {transform: translateY(-30px);}
@@ -101,3 +125,5 @@ button:hover{
     100% {transform: translateY(0);}
   
 }
+
+
