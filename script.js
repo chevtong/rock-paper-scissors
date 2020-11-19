@@ -1,8 +1,3 @@
-// TODO: clean the code, create function if possible 
-// make player win 100% /75%
-
-
-
 //Enter page display opacity  
 document.querySelector(".btn-entergame").addEventListener("click", function(){
 
@@ -104,18 +99,6 @@ function playAgain(){
         setTimeout(() =>{ playAgainScreen.style.opacity = "0.3";}, 800);
         setTimeout(() =>{ playAgainScreen.style.display = "none";}, 1000);
         setTimeout(() =>{ location.reload();},1200);
-        // playAgainScreen.style.opacity = "0.7";
-        // setTimeout(() =>{ playAgainScreen.style.opacity = "0.1;}, 200);
-        // setTimeout(() =>{ playAgainScreen.style.opacity = "0.2";}, 300);
-        // setTimeout(() =>{ playAgainScreen.style.opacity = "0.3";}, 400);
-        // setTimeout(() =>{ playAgainScreen.style.opacity = "0.5";}, 500);
-        // setTimeout(() =>{ playAgainScreen.style.opacity = "0.4";}, 600);
-        // setTimeout(() =>{ playAgainScreen.style.opacity = "0.3";}, 700);
-        // setTimeout(() =>{ playAgainScreen.style.opacity = "0.2";}, 800);
-        // setTimeout(() =>{ playAgainScreen.style.opacity = "0.1";}, 900);
-        // setTimeout(() =>{ playAgainScreen.style.display = "none"}, 1000);
-
-        // location.reload();
 
     });
     
