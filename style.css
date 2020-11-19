@@ -98,6 +98,7 @@ button{
 button:hover{
     transform: scale(1.3);
     border: 1px solid #515070;
+    cursor: pointer;
     
 }
 
