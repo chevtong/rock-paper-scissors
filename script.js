@@ -95,10 +95,10 @@ function playAgain(){
 
         //playagain btn fade out slowly after click
         playAgainScreen.style.opacity = "0.7";
-        setTimeout(() =>{ playAgainScreen.style.opacity = "0.5";}, 400);
-        setTimeout(() =>{ playAgainScreen.style.opacity = "0.3";}, 800);
-        setTimeout(() =>{ playAgainScreen.style.display = "none";}, 1000);
-        setTimeout(() =>{ location.reload();},1200);
+        setTimeout(() =>{ playAgainScreen.style.opacity = "0.5";}, 100);
+        setTimeout(() =>{ playAgainScreen.style.opacity = "0.3";}, 200);
+        setTimeout(() =>{ playAgainScreen.style.display = "none";}, 300);
+        setTimeout(() =>{ location.reload();},400);
 
     });
     
