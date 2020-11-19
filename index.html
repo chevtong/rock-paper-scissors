@@ -3,24 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- fontawesome css -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style-index.css">
-
+    <!-- fontawesome css -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>ROCK.PAPER.SCISSORS</title>
 </head>
 <body>
-
-    <a href="gamepage.html">
-        <div class="wrapper">
-
-        <button class="btn-entergame"><h3>ROCK <br>PAPER <br> SCISSORS</h3></button>
-            <p> Welcome to the<br> <br>
-            ROCK <i class="fas fa-circle"></i> PAPER <i class="fas fa-circle"></i> SCISSORS<br><br>
-            This exercise aims to bring javascript's 'Select random element' and 'Conditional Statement' to practice. I hope you will like it.</p>
-        </div>
-    </a>
     
+    <div class="container">
+
+        <div class="entergame">
+            <button class="btn-entergame"><h3>ROCK <br>PAPER <br> SCISSORS</h3></button>
+        </div>
+
+        <div class="intro">
+            <h1>ROCK <i class="far fa-circle"></i> PAPER <i class="far fa-circle"></i> SCISSORS</h1>
+            <h3>Let's play together!</h3>
+        </div>
+
+
+        <div class="playagain" id="playagain">
+            <button class="btn-playagain"><h3>PLAY AGAIN?</h3></button>
+        </div>
+
+        <div class="match" id="match">
+
+            <div class="hands">
+                <h4>PLAYER</h4>
+                    <img src="img/consider-player.png" alt="considering..." class="playerhandicon">
+                    <img src="img/consider.png" alt="considering..." class="computerhandicon">
+                <h4>COMPUTER</h4>
+            </div>
+
+            <p>Pick one in below</p>
+
+            <div class="options">
+                <button class="rock" id="playerRock" value="rock">
+                    <img src="img/stone.png" alt="rock">
+                </button>
+
+                <button class="paper" id="playerPaper">
+                    <img src="img/paper.png" alt="paper">
+                </button>
+
+                <button class="scissors" id="playerScrissors">
+                    <img src="img/scissors.png" alt="scissors">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
