@@ -2,6 +2,7 @@
 // make player win 100% /75%
 
 
+
 //Enter page display opacity  
 document.querySelector(".btn-entergame").addEventListener("click", function(){
 
@@ -19,11 +20,7 @@ document.querySelector(".btn-entergame").addEventListener("click", function(){
 
 });  
 
-
-let playerChoice;
-let computerChoice; 
-
-// Function to get computer choice
+//Function to get computer choice
 function getComputerChoice(){
 
     let randomNumber = Math.random();
@@ -39,10 +36,11 @@ function getComputerChoice(){
 };
 
 //Function for Compare 
+let playerChoice;
+let computerChoice; 
+
 function playMatch(){
-
-    
-
+ 
     if (playerChoice === "rock" && computerChoice === "paper"){
         return result = "YOU LOSE";
     }else if (playerChoice === "rock" && computerChoice === "scissors"){
@@ -60,14 +58,9 @@ function playMatch(){
     }
 }; 
 
-
-
 //Function to change the handicon + animation
 let playerChoiceLogo = document.querySelector(".playerhandicon");
-
 let computerChoiceLogo = document.querySelector(".computerhandicon");
-
-console.log(playerChoiceLogo);
 
 function ChangeHandIcon(){
 
@@ -75,56 +68,54 @@ function ChangeHandIcon(){
     playerChoiceLogo.style.animation = "bounce 1s 1.5 ease";
     computerChoiceLogo.style.animation = "bounce 1s 1.5 ease";
 
-    
-
+    //change hand icons with timeout
     setTimeout(() =>{ 
     
     playerChoiceLogo.setAttribute('src', "img/" + playerChoice + "-player.png");
- 
     computerChoiceLogo.setAttribute('src', "img/" + computerChoice + "-computer.png");
     
     }, 1500);
 
 };
 
-//Display result
+//Function to display result
 function displayResult(){
 setTimeout(() =>{ 
     
     let displayResult = document.querySelector("h3");
     displayResult.innerHTML = result;
 
-    
     }, 1500);
 };
 
-
-
-
-
 // Play again page
 let matchScreen = document.querySelector(".match");
-
 let playAgainScreen = document.querySelector(".playagain");
 
 function playAgain(){
 
-    setTimeout(() =>{ playAgainScreen.style.display = 'block'; }, 4000 );
+    setTimeout(() =>{ playAgainScreen.style.display = 'block'; }, 3500 );
 
     document.querySelector(".btn-playagain").addEventListener("click", function(){
 
+        //playagain btn fade out slowly after click
+        playAgainScreen.style.opacity = "0.7";
+        setTimeout(() =>{ playAgainScreen.style.opacity = "0.5";}, 400);
+        setTimeout(() =>{ playAgainScreen.style.opacity = "0.3";}, 800);
+        setTimeout(() =>{ playAgainScreen.style.display = "none";}, 1000);
+        setTimeout(() =>{ location.reload();},1200);
         // playAgainScreen.style.opacity = "0.7";
-        setTimeout(() =>{ playAgainScreen.style.opacity = "0.8";}, 200);
-        setTimeout(() =>{ playAgainScreen.style.opacity = "0.7";}, 300);
-        setTimeout(() =>{ playAgainScreen.style.opacity = "0.6";}, 400);
-        setTimeout(() =>{ playAgainScreen.style.opacity = "0.5";}, 500);
-        setTimeout(() =>{ playAgainScreen.style.opacity = "0.4";}, 600);
-        setTimeout(() =>{ playAgainScreen.style.opacity = "0.3";}, 700);
-        setTimeout(() =>{ playAgainScreen.style.opacity = "0.2";}, 800);
-        setTimeout(() =>{ playAgainScreen.style.opacity = "0.1";}, 900);
-        setTimeout(() =>{ playAgainScreen.style.display = "none"}, 1000);
+        // setTimeout(() =>{ playAgainScreen.style.opacity = "0.1;}, 200);
+        // setTimeout(() =>{ playAgainScreen.style.opacity = "0.2";}, 300);
+        // setTimeout(() =>{ playAgainScreen.style.opacity = "0.3";}, 400);
+        // setTimeout(() =>{ playAgainScreen.style.opacity = "0.5";}, 500);
+        // setTimeout(() =>{ playAgainScreen.style.opacity = "0.4";}, 600);
+        // setTimeout(() =>{ playAgainScreen.style.opacity = "0.3";}, 700);
+        // setTimeout(() =>{ playAgainScreen.style.opacity = "0.2";}, 800);
+        // setTimeout(() =>{ playAgainScreen.style.opacity = "0.1";}, 900);
+        // setTimeout(() =>{ playAgainScreen.style.display = "none"}, 1000);
 
-        location.reload();
+        // location.reload();
 
     });
     
@@ -135,44 +126,37 @@ function playAgain(){
 document.getElementById("playerRock").addEventListener("click", function(){
 
     playerChoice = "rock";
+
     getComputerChoice();
     ChangeHandIcon();
     playMatch();
     displayResult();
     playAgain();
 
-console.log("player :" + playerChoice);
-console.log("computer :" + computerChoice);
-console.log(result);
-
-  });
+});
 
 //get player choice - PAPER
 document.getElementById("playerPaper").addEventListener("click", function(){
 
     playerChoice = "paper";
+
     getComputerChoice();
     ChangeHandIcon();
     playMatch();
     displayResult();
     playAgain();
 
-console.log("player :" + playerChoice);
-console.log("computer :" + computerChoice);
-console.log(result);
 });
 
 //get player choice - SCISSORS
 document.getElementById("playerScrissors").addEventListener("click", function(){
 
     playerChoice = "scissors";
+
     getComputerChoice();
     ChangeHandIcon();
     playMatch();
     displayResult();
     playAgain();
 
-console.log("player :" + playerChoice);
-console.log("computer :" + computerChoice);
-console.log(result);
 });
